@@ -7,14 +7,23 @@
       <div class="col-3">
         <h2>Code</h2>
         <textarea name="code" rows="40" spellcheck="false" class="code"
-                  style="width: 100%" autofocus></textarea>
+                  style="width: 100%" autofocus><%= @code %></textarea>
       </div>
       <div class="col-3">
         <h2>Test</h2>
         <textarea name="test" rows="40" spellcheck="false" class="code"
-                  style="width: 100%"></textarea>
+                  style="width: 100%"><%= @test %></textarea>
       </div>
     </div>
+
+    <h2>Output</h2>
+    <div class="row">
+      <div class="col-6">
+        <textarea name="console" rows="10" spellcheck="false" class="code"
+                  style="width: 100%"><%= @message %></textarea>
+      </div>
+    </div>
+
     <div class="actions">
       <button>Run</button>
     </div>
