@@ -18,7 +18,7 @@ defmodule Letsplay.PageController do
     File.write(dir <> "/test_fibonacci.rb", test)
     File.write(dir <> "/fibonacci.rb", code)
     case System.cmd("docker", ["run", "-v", dir <> ":/home/app",
-      "ducktyper/ruby", "ruby", "test_fibonacci.rb"], stderr_to_stdout: true) do
+      "letsplay/ruby", "ruby", "test_fibonacci.rb"], stderr_to_stdout: true) do
       {std, _} ->
         File.rm_rf(dir)
         render conn, "index.html", test: test, code: code, message: std
