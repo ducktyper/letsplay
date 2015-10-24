@@ -2,6 +2,7 @@ defmodule Letsplay.PageController do
   use Letsplay.Web, :controller
 
   def index(conn, _params) do
+    :random.seed(:os.timestamp)
     %{"name"          => name,
       "language"      => language,
       "test_filename" => test_filename,
@@ -20,8 +21,8 @@ defmodule Letsplay.PageController do
     end
 
     render conn, "index.html",
-      code: %{filename: test_filename, body: code_body, language: "ruby"},
-      test: %{filename: code_filename, body: test_body},
+      code: %{filename: code_filename, body: code_body, language: "ruby"},
+      test: %{filename: test_filename, body: test_body},
       name: name,
       language: language,
       output: ""
