@@ -4,5 +4,11 @@
     "language":      "ruby",
     "test_filename": "test_fibonacci.rb",
     "code_filename": "fibonacci.rb"
+  },
+  {
+    "name":          "Fizz Buzz",
+    "language":      "ruby",
+    "test_filename": "test_fizz_buzz.rb",
+    "code_filename": "fizz_buzz.rb"
   }
 ]
