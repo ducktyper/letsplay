@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @name %></h1>
+  <p>In <%= @language %></p>
   <form action="<%= page_path(@conn, :run) %>" method="post">
     <input type="hidden" name="_csrf_token"
            value="<%= Plug.CSRFProtection.get_csrf_token() %>">
