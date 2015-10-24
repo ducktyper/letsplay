@@ -1,3 +1,6 @@
+# Calculate nth fibonacci number
+# Fibonacci.new.calculate(4) #=> 3
+
 require "minitest/autorun"
 require "./fibonacci"
 
