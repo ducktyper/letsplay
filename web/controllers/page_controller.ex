@@ -7,15 +7,15 @@ defmodule Letsplay.PageController do
       "language"      => language,
       "test_filename" => test_filename,
       "code_filename" => code_filename} =
-      File.read!("code_katas/index.json")
+      File.read!("/app/code_katas/index.json")
       |> Poison.decode!
       |> Enum.random
 
-    test_body = case File.read("code_katas/#{test_filename}") do
+    test_body = case File.read("/app/code_katas/#{test_filename}") do
       {:ok, text} -> text
       _           -> ""
     end
-    code_body = case File.read("code_katas/#{code_filename}") do
+    code_body = case File.read("/app/code_katas/#{code_filename}") do
       {:ok, text} -> text
       _           -> ""
     end
