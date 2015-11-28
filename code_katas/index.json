@@ -12,6 +12,12 @@
     "code_filename": "fibonacci.js"
   },
   {
+    "name":          "Fibonacci",
+    "language":      "mono",
+    "test_filename": "FibonacciTest.cs",
+    "code_filename": "Fibonacci.cs"
+  },
+  {
     "name":          "Fizz Buzz",
     "language":      "ruby",
     "test_filename": "test_fizz_buzz.rb",
