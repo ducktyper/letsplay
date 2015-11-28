@@ -31,7 +31,7 @@ defmodule Letsplay.PageController do
   def run(conn, %{"code" => %{"filename" => code_filename, "body" => code_body},
                   "test" => %{"filename" => test_filename, "body" => test_body},
                   "language" => language, "name" => name}) do
-    dir = System.cwd() <> "/tmp/" <>
+    dir ="/app/code_katas/tmp/" <>
       (:crypto.strong_rand_bytes(16) |> Base.url_encode64 |> binary_part(0, 16))
     File.rm_rf(dir)
     File.mkdir(dir)
