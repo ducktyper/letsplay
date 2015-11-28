@@ -21,7 +21,7 @@ defmodule Letsplay.PageController do
     end
 
     render conn, "index.html",
-      code: %{filename: code_filename, body: code_body, language: "ruby"},
+      code: %{filename: code_filename, body: code_body, language: language},
       test: %{filename: test_filename, body: test_body},
       name: name,
       language: language,
@@ -41,6 +41,7 @@ defmodule Letsplay.PageController do
     cmd = ["run", "-v", dir <> ":/home/app", "letsplay/#{language}"]
     cmd = case language do
       "ruby" -> cmd ++ ["ruby", test_filename]
+      "nodejs" -> cmd ++ ["node", test_filename]
       _ -> cmd ++ ["ruby", "echo", "nosupport"]
     end
 

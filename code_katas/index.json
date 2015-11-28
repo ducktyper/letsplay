@@ -6,6 +6,12 @@
     "code_filename": "fibonacci.rb"
   },
   {
+    "name":          "Fibonacci",
+    "language":      "nodejs",
+    "test_filename": "test_fibonacci.js",
+    "code_filename": "fibonacci.js"
+  },
+  {
     "name":          "Fizz Buzz",
     "language":      "ruby",
     "test_filename": "test_fizz_buzz.rb",
