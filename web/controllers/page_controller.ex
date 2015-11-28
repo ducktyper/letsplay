@@ -40,9 +40,10 @@ defmodule Letsplay.PageController do
 
     cmd = ["run", "-v", dir <> ":/home/app", "letsplay/#{language}"]
     cmd = case language do
-      "ruby" -> cmd ++ ["ruby", test_filename]
+      "ruby"   -> cmd ++ ["ruby", test_filename]
       "nodejs" -> cmd ++ ["node", test_filename]
-      _ -> cmd ++ ["ruby", "echo", "nosupport"]
+      "mono"   -> cmd ++ ["bash", "-c", mono_code(code_filename, test_filename)]
+      _        -> cmd ++ ["ruby", "echo", "nosupport"]
     end
 
     case System.cmd("docker", cmd, stderr_to_stdout: true) do
@@ -56,4 +57,16 @@ defmodule Letsplay.PageController do
           output: output
     end
   end
+
+  defp mono_code(code_filename, test_filename) do
+    code_lib = Regex.replace(~r/\.cs$/, code_filename, "")
+    test_dll = Regex.replace(~r/\.cs$/, test_filename, ".dll")
+
+    compile_code = "mcs -t:library #{code_filename}"
+    compile_test = "mcs -t:library -r:/nunit/nunit.framework,#{code_lib} #{test_filename}"
+    run_test     = "mono /nunit/nunit-console.exe #{test_dll}"
+
+    Enum.join([compile_code, compile_test, run_test], " && ")
+  end
+
 end
