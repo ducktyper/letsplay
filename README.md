@@ -1,19 +1,13 @@
 # Letsplay
 
-To start your Phoenix app:
+Practice simple code katas in many different programming languages on the Web.
 
-  1. Install dependencies with `mix deps.get`
-  2. Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  3. Start Phoenix endpoint with `mix phoenix.server`
+## How to play
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+When you visit the website, you will be given a random code kata to play with.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+The tests are given so you need to type the actual code to pass all tests.
 
-## Learn more
+You can run tests by pressing "Run" button.
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: http://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+[Play Now](http://play.ducksan.co.nz)
